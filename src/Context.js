@@ -21,7 +21,7 @@ class ProductProvider extends Component {
   setProduct = () => {
     let temProducts = [];
     ProductInfo.forEach((items) => {
-      console.log(temProducts);
+      //console.log(temProducts);
       const singleItem = { ...items };
       temProducts = [...temProducts, singleItem];
     });
@@ -31,9 +31,11 @@ class ProductProvider extends Component {
   };
 
   getItem = (id) => {
-    const product = this.state.products.find((item) => item.id === id);
+    const product = this.state.products.find((item) => {
+      return item.id === id;
+    });
+
     return product;
-    console.log(product);
   };
 
   handelDetail = (id) => {
@@ -59,7 +61,6 @@ class ProductProvider extends Component {
         this.addTotal();
       }
     );
-    //console.log(`hello from addtoCart ${id}`);
   };
 
   increment = (id) => {
