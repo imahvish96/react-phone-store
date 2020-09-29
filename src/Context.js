@@ -21,9 +21,9 @@ class ProductProvider extends Component {
   setProduct = () => {
     let temProducts = [];
     ProductInfo.forEach((items) => {
+      console.log(temProducts);
       const singleItem = { ...items };
       temProducts = [...temProducts, singleItem];
-      //console.log(temProducts);
     });
     this.setState(() => {
       return { products: temProducts };
